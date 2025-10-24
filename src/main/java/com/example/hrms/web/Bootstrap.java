@@ -1,8 +1,6 @@
 package com.example.hrms.web;
 
-import com.example.hrms.dao.ConnectionFactory;
-import com.example.hrms.dao.EmployeeDao;
-import com.example.hrms.dao.GradeDao;
+import com.example.hrms.dao.*;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -21,5 +19,8 @@ public class Bootstrap implements ServletContextListener {
         ctx.setAttribute("cf", cf);
         ctx.setAttribute("employeeDao", new EmployeeDao(cf));
         ctx.setAttribute("gradeDao", new GradeDao(cf));
+        ctx.setAttribute("attendanceDao", new AttendanceDao(cf));
+        ctx.setAttribute("payrollDao", new PayrollDao(cf));
+        ctx.setAttribute("disciplineDao", new DisciplineDao(cf));
     }
 }

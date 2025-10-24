@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+  <display-name>HRMS WebApp</display-name>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <context-param>
+    <param-name>jdbc.url</param-name>
+    <param-value>jdbc:h2:./data/hrms;MODE=MySQL;DATABASE_TO_UPPER=false;AUTO_SERVER=TRUE</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.user</param-name>
+    <param-value>sa</param-value>
+  </context-param>
+  <context-param>
+    <param-name>jdbc.password</param-name>
+    <param-value></param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>com.example.hrms.config.DatabaseInitializer</listener-class>
+  </listener>
+
+</web-app>
